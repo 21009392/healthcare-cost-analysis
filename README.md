@@ -48,4 +48,70 @@ healthcare-cost-analysis/
 - Hyperparameter tuning and model optimisation
 - Incorporation of additional socioeconomic features
 - Extension to time-based or longitudinal analysis
+- 
+Feature Engineering 
+* Applied binary encoding for gender and smoking status to preserve interpretability
+* Used one-hot encoding for geographic regions to avoid imposing ordinal structure
+* Engineered interaction features to capture non-linear cost drivers
+* Log-transformed target variable to reduce skewness and stabilize variance
 
+
+
+## Modelling
+
+### Objective
+The goal of the modelling stage is to evaluate whether the engineered features are informative in predicting individual healthcare costs, and to establish a robust baseline regression model with proper preprocessing.
+
+The target variable is the log-transformed medical charges (`log_charges`), which helps reduce skewness and stabilise variance.
+
+---
+
+### Train–Test Split
+The dataset is split into training and testing sets using an 80/20 split:
+
+- Training set: 80%
+- Test set: 20%
+- Random seed fixed for reproducibility
+
+This ensures model performance is evaluated on unseen data.
+
+---
+
+### Preprocessing Pipeline
+A unified preprocessing pipeline is constructed using `ColumnTransformer` to ensure consistent feature transformations during both training and inference.
+
+- **Numerical features** (`age`, `bmi`, `children`, `bmi_smoker`) are standardised using `StandardScaler`
+- **Remaining features** (e.g. one-hot encoded categorical variables) are passed through unchanged
+
+This approach avoids data leakage and keeps preprocessing tightly coupled with the model.
+
+---
+
+### Model Selection
+Ridge Regression is used as the baseline model due to its ability to:
+
+- Handle multicollinearity introduced by one-hot encoding
+- Stabilise coefficient estimates via L2 regularisation
+- Maintain interpretability of feature coefficients
+
+The full modelling workflow is implemented using a `Pipeline` that combines preprocessing and model fitting into a single object.
+
+---
+
+### Model Training
+The model is trained on the training dataset using the preprocessing + Ridge regression pipeline. This ensures all transformations are learned exclusively from the training data.
+
+---
+
+### Evaluation
+Model performance is evaluated on the test set using standard regression metrics such as:
+
+- R² (coefficient of determination)
+- Root Mean Squared Error (RMSE)
+
+These metrics assess both explanatory power and predictive accuracy.
+
+---
+
+### Interpretation
+The Ridge model coefficients are examined to understand the direction and relative importance of engineered features, providing insights into key drivers of healthcare costs.
