@@ -1,0 +1,54 @@
+{
+  "source_url": "https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/insurance.csv",
+  "kaggle_reference": "https://www.kaggle.com/datasets/mirichoi0218/insurance",
+  "retrieved_date": "2026-10-08",
+  "SHA256": "505c1cbc2e63d0363bac59501563df2530aadf4cdb9cfee226f4ef32f5468281",
+  "raw_rows": 1338,
+  "exact_duplicates_removed": 1,
+  "rows": 1337,
+  "train_rows": 1069,
+  "test_rows": 268,
+  "split_seed": 42,
+  "CV": "5-fold shuffled KFold, seed 42, on training data only; same folds for all models",
+  "MLP_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "tail_threshold": 33902.032,
+  "tail_test_count": 38,
+  "best_parameters": {
+    "Ridge (L2)": {
+      "regressor__model__alpha": 0.1
+    },
+    "Lasso (L1)": {
+      "regressor__model__alpha": 0.001
+    },
+    "Ridge + engineered features": {
+      "regressor__model__alpha": 0.1
+    },
+    "MLP (32, 16)": {
+      "regressor__model__alpha": 0.0001,
+      "regressor__model__learning_rate_init": 0.003
+    }
+  },
+  "CV_RMSE": {
+    "Ridge (L2)": 6123.642087078248,
+    "Lasso (L1)": 6121.624500504962,
+    "Ridge + engineered features": 4925.72625088066,
+    "MLP (32, 16)": 4993.308778679921
+  },
+  "RMSE_reduction_percent": {
+    "Ridge (L2)": 24.124336437086935,
+    "Lasso (L1)": 24.3036677705445,
+    "Ridge + engineered features": 0.585361899442711
+  },
+  "versions": {
+    "python": "3.12.14",
+    "sklearn": "1.8.0",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  }
+}

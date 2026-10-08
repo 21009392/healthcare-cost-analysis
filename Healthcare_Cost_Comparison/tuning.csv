@@ -1,0 +1,21 @@
+model,parameters,CV_RMSE,CV_fold_SD
+Ridge (L2),"{""regressor__model__alpha"": 0.01}",6123.650011256654,189.28334669711484
+Ridge (L2),"{""regressor__model__alpha"": 0.1}",6123.642087078248,189.11211719865187
+Ridge (L2),"{""regressor__model__alpha"": 1}",6123.906791405812,187.5016016059408
+Ridge (L2),"{""regressor__model__alpha"": 10}",6156.154530142085,180.54073564758266
+Ridge (L2),"{""regressor__model__alpha"": 100}",7280.080067111482,308.72060368450934
+Lasso (L1),"{""regressor__model__alpha"": 0.0001}",6123.392890230651,189.17276096043673
+Lasso (L1),"{""regressor__model__alpha"": 0.001}",6121.624500504962,188.00958193788102
+Lasso (L1),"{""regressor__model__alpha"": 0.01}",6122.874397099392,184.44793812777965
+Lasso (L1),"{""regressor__model__alpha"": 0.1}",7012.262036627083,356.68044348462996
+Ridge + engineered features,"{""regressor__model__alpha"": 0.01}",4926.02761551161,120.13256672571553
+Ridge + engineered features,"{""regressor__model__alpha"": 0.1}",4925.72625088066,119.50311497042115
+Ridge + engineered features,"{""regressor__model__alpha"": 1}",4934.987016508888,117.6375972033719
+Ridge + engineered features,"{""regressor__model__alpha"": 10}",5107.258756644326,134.59134129043636
+Ridge + engineered features,"{""regressor__model__alpha"": 100}",5379.241063434261,132.66293515200977
+"MLP (32, 16)","{""regressor__model__alpha"": 0.0001, ""regressor__model__learning_rate_init"": 0.0003}",5013.57039082128,204.53309106042624
+"MLP (32, 16)","{""regressor__model__alpha"": 0.0001, ""regressor__model__learning_rate_init"": 0.001}",5043.334837955549,128.56529201533343
+"MLP (32, 16)","{""regressor__model__alpha"": 0.0001, ""regressor__model__learning_rate_init"": 0.003}",4993.308778679921,138.69234662247348
+"MLP (32, 16)","{""regressor__model__alpha"": 0.01, ""regressor__model__learning_rate_init"": 0.0003}",5018.607792831679,201.3956029642494
+"MLP (32, 16)","{""regressor__model__alpha"": 0.01, ""regressor__model__learning_rate_init"": 0.001}",5028.926913162325,134.1545533593359
+"MLP (32, 16)","{""regressor__model__alpha"": 0.01, ""regressor__model__learning_rate_init"": 0.003}",4996.088116320105,140.8642815601216
